@@ -1,6 +1,5 @@
 import React from 'react';
-import { BaseLayout } from './Components/BaseLayout';
-import './App.css';
+import { BaseLayout } from './Containers/BaseLayout';
 
 function App() {
   return (
