@@ -12,16 +12,16 @@ import './BaseLayout.css';
 export const BaseLayout = () => {
   const [state, send] = useMachine(bookingMachine);
 
-  console.log('state: ', state.value)
+  console.log('state: ', state.value, state.context)
 
   return (
     <div className='BaseLayout'>
       <Nav state={state} send={send} />
-      <StepsLayout state={state} send={send}>
+      <StepsLayout>
         {state.matches('initial') && <Welcome send={send} />}
         {state.matches('search') && <Search send={send} />}
         {state.matches('tickets') && <Tickets send={send} />}
-        {state.matches('passengers') && <Passengers send={send} />} 
+        {state.matches('passengers') && <Passengers state= {state} send={send} />} 
       </StepsLayout>
     </div>
   );
