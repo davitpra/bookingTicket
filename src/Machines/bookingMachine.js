@@ -77,7 +77,8 @@ const bookingMachine = createMachine({
         ADD : {
           target: 'passengers',
           actions: assign (
-            (context, event)=> context.passengers.push (event.newPassenger)
+            (context, event)=> 
+              context.passengers.push (event.newPassenger)
           )
         }
       },
@@ -90,7 +91,7 @@ const bookingMachine = createMachine({
       on: {
         FINISH: {
           target: 'initial',
-          actions: 'cleanContext',
+          actions: "cleanContext",
         },
       },
     },

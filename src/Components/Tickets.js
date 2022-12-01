@@ -1,11 +1,11 @@
 import React from 'react';
 import './Tickets.css';
 
-export const Tickets = ({ send, context }) => {
+export const Tickets = ({ send, state }) => {
   const finish = () => {
     send('FINISH')
   };
-
+  let context = state.context
   return (
     <div className='Tickets'>
       <p className='Tickets-description description'>Gracias por volar con book a fly </p>
